@@ -54,7 +54,3 @@ Thumbs.db
 .sass-cache/
 .eslintcache
 .stylelintcache
-_site
-.jekyll-cache
-.jekyll-metadata
-vendor

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-16T06:43:51-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Code in Life</title><subtitle>Am I love Javascript?</subtitle><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><entry><title type="html">Install Python Django</title><link href="http://localhost:4000/blog/django-post/" rel="alternate" type="text/html" title="Install Python Django" /><published>2020-09-07T00:00:00-07:00</published><updated>2020-09-08T19:10:00-07:00</updated><id>http://localhost:4000/blog/django-post</id><content type="html" xml:base="http://localhost:4000/blog/django-post/">&lt;h3 id=&quot;install-python-django-mac-os--python3&quot;&gt;Install python django (Mac OS + Python3)&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install pipenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;next step: create a django project folder (for example, Django)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir Django
+
+cd Django
+
+pipenv install django==2.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pipenv shell
+
+django-admin startproject django_project .
+
+python manage.py runserver (to see a welcome page)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ctrl+c to exit&lt;/p&gt;
+
+&lt;p&gt;next step: create an app&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python manage.py startapp hello
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;run-django&quot;&gt;Run django&lt;/h3&gt;
+
+&lt;p&gt;next step: open the project’s settings.py add the app name (for example, hello)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'hello', ✅
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;next step: create a view, open the views.py in the app (hello) folder and add these&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from django.http import HttpResponse
+
+def myView(request):
+    return HttpResponse('Hello world')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;next step: add a particular url to the urls.py in the project folder&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from django.contrib import admin
+from django.urls import path
+from hello.views import myView ✅
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('hello/', myView), ✅
+]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;next step: run django server&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;check the url for example, http://127.0.0.1:8000/hello/&lt;/p&gt;
+
+&lt;p&gt;.
+.
+.&lt;/p&gt;
+
+&lt;p&gt;exit from pipenv shell&lt;/p&gt;</content><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><category term="Blog" /><category term="django" /><summary type="html">Install python django (Mac OS + Python3)</summary></entry><entry><title type="html">React.js - Props and State</title><link href="http://localhost:4000/blog/props-post/" rel="alternate" type="text/html" title="React.js - Props and State" /><published>2020-08-25T00:00:00-07:00</published><updated>2020-08-25T14:06:00-07:00</updated><id>http://localhost:4000/blog/props-post</id><content type="html" xml:base="http://localhost:4000/blog/props-post/">&lt;h3 id=&quot;what-are-props&quot;&gt;What are props?&lt;/h3&gt;
+
+&lt;p&gt;Props is for properties and they are used to pass data between React components. React’s data flow between components is unidirectional (from parent to child only).&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Parent extends Component {
+    render() {
+        return (
+            &amp;lt;Child name=&quot;John Doe&quot; /&amp;gt;
+        );
+    }
+}
+
+const Child = (props) =&amp;gt; {
+    return &amp;lt;p&amp;gt;{props.name}&amp;lt;/p&amp;gt;;
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;what-is-state&quot;&gt;What is state?&lt;/h3&gt;
+
+&lt;p&gt;It allows components to create and manage their own data. So unlike props, components cannot pass data with state, but they can create and manage it internally.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Person extends React.Component {
+    constructor() {
+        this.state = {
+            id: 1,
+            name: &quot;John Doe&quot;
+        };
+    }
+
+    render() {
+        return (
+            &amp;lt;div&amp;gt;
+              &amp;lt;p&amp;gt;{this.state.id}&amp;lt;/p&amp;gt;
+              &amp;lt;p&amp;gt;{this.state.name}&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+        );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;how-do-you-update-a-components-state&quot;&gt;How do you update a component’s state?&lt;/h4&gt;
+
+&lt;p&gt;State should not be modified directly, but it can be modified with a method called setState().&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// wrong
+this.state.id = &quot;10&quot;;
+
+// correct
+this.setState({
+    id: &quot;10&quot;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Basically, a functional component can’t have a state since there is no “this” keyword but can use useState instead.&lt;/p&gt;</content><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><category term="Blog" /><category term="react" /><category term="props" /><category term="state" /><summary type="html">What are props?</summary></entry><entry><title type="html">Install Jekyll and Run</title><link href="http://localhost:4000/blog/jekyll-post/" rel="alternate" type="text/html" title="Install Jekyll and Run" /><published>2020-08-21T00:00:00-07:00</published><updated>2020-08-21T12:32:00-07:00</updated><id>http://localhost:4000/blog/jekyll-post</id><content type="html" xml:base="http://localhost:4000/blog/jekyll-post/">&lt;p&gt;1.Install Ruby first&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;then add ruby path to .bashrc or .zshrc&lt;/p&gt;
+
+&lt;p&gt;2.Install Jekyll and bundler as well&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install -n /usr/local/bin jekyll bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.Create a page and run to check&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new helloBlog
+
+cd helloBlog
+
+bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;then go to the preview address in the browser.&lt;/p&gt;</content><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><category term="Blog" /><category term="jekyll" /><category term="ruby" /><summary type="html">1.Install Ruby first</summary></entry><entry><title type="html">Find most frequent item of an array</title><link href="http://localhost:4000/it/array-post/" rel="alternate" type="text/html" title="Find most frequent item of an array" /><published>2020-08-20T00:00:00-07:00</published><updated>2020-09-18T19:32:00-07:00</updated><id>http://localhost:4000/it/array-post</id><content type="html" xml:base="http://localhost:4000/it/array-post/">&lt;h2 id=&quot;find-most-frequent-item-of-an-array-with-javascript&quot;&gt;Find most frequent item of an array with Javascript&lt;/h2&gt;
+
+&lt;p&gt;When I interviewed a while ago, I was asked the following quiz that needs to find out the most frequent item of an array. It’s been years that I interview to get this type of question so I was freak out. But, the quiz was simple enough 😅.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/codeinlife/6ebc732eb2a1d64ff8d57f78f2a5ef98.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I was thinking too much to solve the quiz haha … finally I got the result.&lt;/p&gt;
+
+&lt;p&gt;If I did with python then it may easier to solve.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/codeinlife/2de9aced9f92538da9ccdea3312ae776.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Return result would be&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{'apple': 2, 'banana': 1, 'grape': 1, 'orange': 1}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;that’s enough.&lt;/p&gt;</content><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><category term="IT" /><category term="javascript" /><category term="code" /><summary type="html">Find most frequent item of an array with Javascript</summary></entry><entry><title type="html">github.io Pages</title><link href="http://localhost:4000/blog/first-post/" rel="alternate" type="text/html" title="github.io Pages" /><published>2020-08-19T00:00:00-07:00</published><updated>2020-08-20T10:32:00-07:00</updated><id>http://localhost:4000/blog/first-post</id><content type="html" xml:base="http://localhost:4000/blog/first-post/">&lt;p&gt;GitHub Pages are public web hosted for free through GitHub. GitHub users can create and host both personal websites and websites related to specific GitHub projects. Pages lets you do the same things as GitHub, but if the repository is named a certain way and files inside it are HTML or Markdown.&lt;/p&gt;
+
+&lt;p&gt;It can be used like a Javascript template that is “{{ }}”, for example, this post title is “github.io Pages” and last updated date is 2020-08-20 10:32:00 -0700.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{ { page.title } }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{ { page.last_modified_at } }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;image-post-test&quot;&gt;Image post test&lt;/h3&gt;
+
+&lt;h4 id=&quot;md-format&quot;&gt;MD format&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020-08-20 17.22.07_PS5TGq.png&quot; alt=&quot;2008 Mini Cooper S&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;html-figure&quot;&gt;HTML figure&lt;/h4&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/2020-08-20%2017.22.07_PS5TGq.png&quot; alt=&quot;2008 Mini Cooper S&quot; class=&quot;img-responsive&quot; /&gt;
+  &lt;figcaption&gt;2008 Mini Cooper S&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Coding9ra</name><email>dongseok.lim@gmail.com</email></author><category term="Blog" /><category term="blog" /><summary type="html">GitHub Pages are public web hosted for free through GitHub. GitHub users can create and host both personal websites and websites related to specific GitHub projects. Pages lets you do the same things as GitHub, but if the repository is named a certain way and files inside it are HTML or Markdown.</summary></entry></feed>
