@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "movies": [
+    {
+      "title": "Some Movie",
+      "rating": 65
+    },
+    {
+      "title": "Another Movie",
+      "rating": 48
+    },
+    {
+      "title": "Good Movie",
+      "rating": 80
+    }
+  ]
+}
